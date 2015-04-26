@@ -6,13 +6,13 @@ animateApp.config(function($routeProvider) {
     		templateUrl: 'page-home.html',
             controller: 'mainController'
     	})
-    	.when('/about', {
-    		templateUrl: 'page-about.html',
-            controller: 'aboutController'
+    	.when('/feelings', {
+    		templateUrl: 'page-feelings.html',
+            controller: 'feelingsController'
     	})
-    	.when('/contact', {
-    		templateUrl: 'page-contact.html',
-            controller: 'contactController'
+    	.when('/breath', {
+    		templateUrl: 'page-breath.html',
+            controller: 'breathController'
     	});
 
 });
@@ -21,10 +21,11 @@ animateApp.controller('mainController', function($scope) {
     $scope.pageClass = 'page-home';
 });
 
-animateApp.controller('aboutController', function($scope) {
-    $scope.pageClass = 'page-about';
+animateApp.controller('feelingsController', function($scope) {
+    $scope.pageClass = 'page-feelings';
+
 });
 
-animateApp.controller('contactController', function($scope) {
-    $scope.pageClass = 'page-contact';
+animateApp.controller('breathController', function($scope) {
+    $scope.pageClass = 'page-breath';
 });
