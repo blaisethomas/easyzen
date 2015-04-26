@@ -1,17 +1,24 @@
 /* BASE STYLES
 ============================================================================= */
+@font-face {
+    font-family: sunn;
+    src: url(assets/SUNN.otf);
+}
 html         { overflow-y:hidden; }
 .page        { 
 	bottom:0; 
-	padding-top:25px;
+	padding-top:100px;
 	position:absolute; 
 	text-align:center;
 	top:0;  
 	width:100%; 
+	font-family: sunn, Arial, Sand-serif;
 }
 
+
+
 .page h1 	{ font-size:60px; }
-.page a     { margin-top:50px; }
+.page a     { margin-top:100px; }
 #feelings      { color:#333; position:absolute; text-align:center; top:50px; width:100%; }
 
 /* PAGES
@@ -19,6 +26,7 @@ html         { overflow-y:hidden; }
 .page-home 		{ background:transparent; color:#F7FFFF; }
 .page-feelings 	{ background:transparent; color:#F7FFFF; }
 .page-breath 	{ background:transparent; color:#F7FFFF; }
+
 
 /* ANIMATIONS
 ============================================================================= */
@@ -50,6 +58,48 @@ video#bgvid {
 	animation: rotateOutNewspaper .5s both ease-in;
 */
 
+p{
+	font-size: 40px;
+}
+
+.font {
+	font-family: sunn, Arial, Sand-serif;
+
+}
+
+.breathe {
+    transition: all 3s ease-out;
+    -webkit-transition: all 3s ease-out;
+    animation: pulsate 8s ease-out infinite;
+    -webkit-animation: pulsate 8s ease-out infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    margin: 0;
+    font-family: sunn, Arial, Sand-serif;
+    font-weight: bold;
+    font-size: 100px;
+    color: white;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    text-transform: uppercase;
+}
+.hover:hover {
+		font-size: 100px;
+    color: #blue;
+}
+
+
+/*@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+}
+*/
+
+
 
 
 /* home -------------------------- */
@@ -67,7 +117,7 @@ video#bgvid {
 
 /* feelings ------------------------ */
 .page-feelings.ng-leave        {
-    -webkit-animation:slideOutLeft 0.5s both ease-in;
+  -webkit-animation:slideOutLeft 0.5s both ease-in;
 	-moz-animation:slideOutLeft 0.5s both ease-in;
 	animation:slideOutLeft 0.5s both ease-in;   
 }
@@ -85,11 +135,20 @@ video#bgvid {
 }
 .page-breath.ng-enter 		{ 
   -webkit-animation:slideInRight 0.5s both ease-in;
+  -webkit-animation:pulsate 0.5s;
 	-moz-animation:slideInRight 0.5s both ease-in;
-	animation:slideInRight 0.5s both ease-in;  
+	-moz-animation:pulsate 0.5s;
+	animation:slideInRight 0.5s both ease-in;
+	animation:pulsate 0.5s;   
 }
 
-/* rotate and fall */
+/* rotate, breathe and fall */
+@-webkit-keyframes pulsate {
+    0%, 20% { transform: translate(-50%, -50%) scale(1); }
+    50%, 70% { transform: translate(-50%, -50%) scale(2); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+}
+
 @-webkit-keyframes rotateFall {
 	0% { -webkit-transform: rotateZ(0deg); }
 	20% { -webkit-transform: rotateZ(10deg); -webkit-animation-timing-function: ease-out; }
