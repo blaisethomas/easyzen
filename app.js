@@ -26,9 +26,8 @@ animateApp.controller('feelingsController', function($scope) {
     $scope.pageClass = 'page-feelings';
         var self = this;
         self.todoList = [
-            {task: "happy", done: false},
-            {task: "to be here", done: false},
-            {task: "with you guys! ", done: false} ];
+            {task: "happy to be here with you guys!", done: false},
+            {task: "thankful", done: false} ];
         self.text; //bound to input box for new todo
         self.addTodo = addTodo;
         self.deleteTodo = deleteTodo;
